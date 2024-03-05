@@ -1,0 +1,16 @@
+package finazon_grpc_go
+
+type {{serviceName}}Client struct {
+	connection *Connection
+	client     {{serviceName}}ServiceClient
+}
+
+func New{{serviceName}}Client(c *Connection) *{{serviceName}}Client {
+	return &{{serviceName}}Client{connection: c, client: New{{serviceName}}ServiceClient(c.Con)}
+}
+
+{{#each rpcList}}
+func (s *{{../serviceName}}Client) {{rpcName}}(request *{{rpcRequestType}}) (*{{rpcResponseType}}, error) {
+	return s.client.{{rpcName}}(s.connection.Ctx, request)
+}
+{{/each}}
