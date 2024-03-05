@@ -31,8 +31,6 @@ go get -u github.com/finazon-io/finazon-grpc-go
 mkdir hello-finazon && cd hello-finazon
 go mod init example/hello
 go get github.com/finazon-io/finazon-grpc-go
-go mod tidy
-go mod vendor
 ```
 
 ### 2. Create `hello-world.go` script
@@ -67,10 +65,16 @@ func main() {
 }
 ```
 
-### 3. Input your API key
+### 3. Download dependencies 
+```bash
+go mod tidy
+go mod vendor
+```
+
+### 4. Input your API key
 Replace `'your_api_key'` with your actual key.
 
-### 4. Run the example
+### 5. Run the example
 ```bash
 go run hello-world.go
 ```
