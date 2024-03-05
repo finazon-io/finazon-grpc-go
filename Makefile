@@ -5,7 +5,7 @@ PROTOC_ASSETS:=${PATH_THIS}/download/protoc_${PROTOC_VERSION}
 PROTOC:=${PROTOC_ASSETS}/bin/protoc
 
 # https://protobuf.dev/reference/go/go-generated/#package
-GO_PACKAGE:="github.com/finazon/finazon-grpc-go"
+GO_PACKAGE:="github.com/finazon-io/finazon-grpc-go"
 
 ${PROTOC}:
 	@mkdir -p ${PROTOC_ASSETS}

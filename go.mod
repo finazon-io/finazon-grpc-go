@@ -1,4 +1,4 @@
-module github.com/mivxxx/finazon-grpc-go-client
+module github.com/finazon-io/finazon-grpc-go
 
 go 1.18
 

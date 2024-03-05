@@ -15,13 +15,13 @@ Ensure you have Go 1.18 or later.
 ## Installation
 
 ```bash
-go get github.com/finazon/finazon-grpc-go
+go get github.com/finazon-io/finazon-grpc-go
 ```
 
 ## Updating to last version
 
 ```bash
-go get -u github.com/finazon/finazon-grpc-go
+go get -u github.com/finazon-io/finazon-grpc-go
 ```
 
 ## Quick start
@@ -30,7 +30,7 @@ go get -u github.com/finazon/finazon-grpc-go
 ```bash
 mkdir hello-finazon && cd hello-finazon
 go mod init example/hello
-go get github.com/finazon/finazon-grpc-go
+go get github.com/finazon-io/finazon-grpc-go
 go mod tidy
 go mod vendor
 ```
@@ -41,7 +41,7 @@ package main
 
 import (
 	"fmt"
-	finazon_grpc_go "github.com/finazon/finazon-grpc-go/pb"
+	finazon_grpc_go "github.com/finazon-io/finazon-grpc-go/pb"
 )
 
 const API_KEY = "your_api_key"
@@ -123,7 +123,7 @@ The following table outlines the supported rpc calls:
 <!--rpc_table_boundary-->
 Here's how you can import `client` and `request` objects:
 ```go
-import finazon_grpc_go "github.com/finazon/finazon-grpc-go/pb"
+import finazon_grpc_go "github.com/finazon-io/finazon-grpc-go/pb"
 
 con, _ := finazon_grpc_go.GetConnection(API_KEY)
 
@@ -146,7 +146,7 @@ Delve deeper with our [official documentation](https://finazon.io/docs).
 - Follow us on [LinkedIn](https://www.linkedin.com/company/finazon).
 
 ## Contributing
-1. Fork and clone: `$ git clone https://github.com/finazon/finazon-grpc-go.git`.
+1. Fork and clone: `$ git clone https://github.com/finazon-io/finazon-grpc-go.git`.
 2. Branch out: `$ cd finazon-grpc-go && git checkout -b my-feature`.
 3. Commit changes and test.
 4. Push your branch and open a pull request with a comprehensive description.
