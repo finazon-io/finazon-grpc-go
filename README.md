@@ -147,7 +147,7 @@ Delve deeper with our [official documentation](https://finazon.io/docs).
 
 ## Contributing
 1. Fork and clone: `$ git clone https://github.com/finazon/finazon-grpc-go.git`.
-2. Branch out: `$ cd finazon-grpc-node && git checkout -b my-feature`.
+2. Branch out: `$ cd finazon-grpc-go && git checkout -b my-feature`.
 3. Commit changes and test.
 4. Push your branch and open a pull request with a comprehensive description.
 
