@@ -61,7 +61,13 @@ func main() {
 		fmt.Println("%s", err)
 		return
 	}
-	fmt.Println("%s", data.String())
+
+	fmt.Printf("Ticker: %s\n", timeSeriesRequest.Ticker)
+	fmt.Printf("%-24s %12s %12s %12s %12s %12s\n", "Time", "Open", "High", "Low", "Close", "Volume")
+	for _, item := range data.Result {
+
+		fmt.Printf("%-24s %12f %12f %12f %12f %12.2f\n", time.Unix(item.Timestamp, 0).Format("2006-01-02T15:04:05 MST"), item.Open, item.High, item.Low, item.Close, item.Volume)
+	}
 }
 ```
 
@@ -81,10 +87,13 @@ go run hello-world.go
 
 📝 Expected output:
 ```
-result:{timestamp:1709326680  open:179.655  close:179.695  high:179.73  low:179.64  volume:563082}
-result:{timestamp:1709326620  open:179.67  close:179.66  high:179.672  low:179.6  volume:242826}
+Ticker: AAPL
+Time                             Open         High          Low        Close       Volume
+2024-03-05T21:59:00 CET    170.180000   170.220000   170.060000   170.120000  10786400.00
+2024-03-05T21:58:00 CET    170.060000   170.190000   170.060000   170.170000    668641.00
+2024-03-05T21:57:00 CET    170.070000   170.120000   170.050000   170.055000    401641.00
 ...
-result:{timestamp:1709324940  open:179.71  close:179.68  high:179.715  low:179.64  volume:107197}
+2024-03-05T21:30:00 CET    169.980000   170.020000   169.954800   169.995000    171639.00
 ```
 
 ## RPC support
@@ -139,6 +148,9 @@ data, err := client.RpcName(&request)
 
 ## Documentation
 Delve deeper with our [official documentation](https://finazon.io/docs).
+
+## Examples
+Explore practical scenarios in the [examples](https://github.com/finazon-io/finazon-grpc-go/tree/main/examples) directory.
 
 ## Support
 - 🌐 Visit our [contact page](https://finazon.io/contact-sales).
