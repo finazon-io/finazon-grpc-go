@@ -39,20 +39,20 @@ package main
 
 import (
 	"fmt"
-	finazon_grpc_go "github.com/finazon-io/finazon-grpc-go/pb"
+	"github.com/finazon-io/finazon-grpc-go/finazon"
 )
 
 const API_KEY = "your_api_key"
 
 func main() {
-	con, err := finazon_grpc_go.GetConnection(API_KEY)
+	con, err := finazon.GetConnection(API_KEY)
 	if err != nil {
 		fmt.Println("%s", err)
 		return
 	}
 
 	timeSeriesClient := con.GetTimeSeriesClient()
-	timeSeriesRequest := finazon_grpc_go.GetTimeSeriesRequest{
+	timeSeriesRequest := finazon.GetTimeSeriesRequest{
 		Dataset: "sip_non_pro",
 		Ticker:  "AAPL",
 	}
@@ -127,13 +127,13 @@ The following table outlines the supported rpc calls:
 <!--rpc_table_boundary-->
 Here's how you can import `client` and `request` objects:
 ```go
-import finazon_grpc_go "github.com/finazon-io/finazon-grpc-go/pb"
+import "github.com/finazon-io/finazon-grpc-go/finazon"
 
-con, _ := finazon_grpc_go.GetConnection(API_KEY)
+con, _ := finazon.GetConnection(API_KEY)
 
 client := con.GetServiceNameClient()
 
-request := finazon_grpc_go.GetServiceNameRequest{}
+request := finazon.GetServiceNameRequest{}
 data, err := client.RpcName(&request)
 ```
 
