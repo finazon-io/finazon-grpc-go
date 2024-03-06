@@ -5,4 +5,4 @@ services:
       context: .
       dockerfile: ./tools/services-generator/Dockerfile
     volumes:
-      - ./pb:/opt/app/dist
+      - ./finazon:/opt/app/dist

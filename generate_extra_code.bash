@@ -13,7 +13,7 @@ function main {
     exit 1
   fi
 
-  printf "package finazon_grpc_go\n\n// ${version}\nvar FINAZON_GRPC_HOST = \"grpc-v${versionMajor}-${versionMinor}.finazon.io:443\"\n" > ${SCRIPT_DIR}/pb/constants.go
+  printf "package finazon\n\n// ${version}\nvar FINAZON_GRPC_HOST = \"grpc-v${versionMajor}-${versionMinor}.finazon.io:443\"\n" > ${SCRIPT_DIR}/finazon/constants.go
 
   # generate service wrappers
   docker compose down --rmi local

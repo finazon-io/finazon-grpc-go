@@ -61,4 +61,46 @@ func (c *Connection) Close() error {
 
 // getters
 
-{{footer}}
+func (c *Connection) GetApiUsageClient() *ApiUsageClient {
+  return NewApiUsageClient(c)
+}
+func (c *Connection) GetBenzingaClient() *BenzingaClient {
+  return NewBenzingaClient(c)
+}
+func (c *Connection) GetBinanceClient() *BinanceClient {
+  return NewBinanceClient(c)
+}
+func (c *Connection) GetCryptoClient() *CryptoClient {
+  return NewCryptoClient(c)
+}
+func (c *Connection) GetDatasetsClient() *DatasetsClient {
+  return NewDatasetsClient(c)
+}
+func (c *Connection) GetExchangeClient() *ExchangeClient {
+  return NewExchangeClient(c)
+}
+func (c *Connection) GetForexClient() *ForexClient {
+  return NewForexClient(c)
+}
+func (c *Connection) GetPublisherClient() *PublisherClient {
+  return NewPublisherClient(c)
+}
+func (c *Connection) GetSecClient() *SecClient {
+  return NewSecClient(c)
+}
+func (c *Connection) GetSipClient() *SipClient {
+  return NewSipClient(c)
+}
+func (c *Connection) GetSnapshotClient() *SnapshotClient {
+  return NewSnapshotClient(c)
+}
+func (c *Connection) GetTickersClient() *TickersClient {
+  return NewTickersClient(c)
+}
+func (c *Connection) GetTimeSeriesClient() *TimeSeriesClient {
+  return NewTimeSeriesClient(c)
+}
+func (c *Connection) GetTradeClient() *TradeClient {
+  return NewTradeClient(c)
+}
+
