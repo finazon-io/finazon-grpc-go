@@ -150,7 +150,7 @@ data, err := client.RpcName(&request)
 Delve deeper with our [official documentation](https://finazon.io/docs).
 
 ## Examples
-Explore practical scenarios in the [examples](https://github.com/finazon-io/finazon-grpc-go/tree/main/examples) directory.
+Explore practical scenarios in the [examples](https://github.com/finazon-io/finazon-grpc-go/tree/master/examples) directory.
 
 ## Support
 - 🌐 Visit our [contact page](https://finazon.io/contact-sales).
