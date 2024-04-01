@@ -40,6 +40,7 @@ package main
 import (
 	"fmt"
 	"github.com/finazon-io/finazon-grpc-go/finazon"
+	"time"
 )
 
 const API_KEY = "your_api_key"
