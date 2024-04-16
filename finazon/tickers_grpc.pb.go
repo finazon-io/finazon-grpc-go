@@ -22,7 +22,7 @@ const (
 	TickersService_FindTickersStocks_FullMethodName = "/finazon.TickersService/FindTickersStocks"
 	TickersService_FindTickersCrypto_FullMethodName = "/finazon.TickersService/FindTickersCrypto"
 	TickersService_FindTickersForex_FullMethodName  = "/finazon.TickersService/FindTickersForex"
-	TickersService_FindTickerUS_FullMethodName      = "/finazon.TickersService/FindTickerUS"
+	TickersService_FindTickersUS_FullMethodName     = "/finazon.TickersService/FindTickersUS"
 )
 
 // TickersServiceClient is the client API for TickersService service.
@@ -30,13 +30,13 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type TickersServiceClient interface {
 	// This API call returns an array of stocks tickers available at Finazon Data API. This list is updated daily.
-	FindTickersStocks(ctx context.Context, in *FindTickersStocksRequest, opts ...grpc.CallOption) (*FindTickerStocksResponse, error)
+	FindTickersStocks(ctx context.Context, in *FindTickersStocksRequest, opts ...grpc.CallOption) (*FindTickersStocksResponse, error)
 	// This API call returns an array of crypto tickers available at Finazon Data API. This list is updated daily.
-	FindTickersCrypto(ctx context.Context, in *FindTickersCryptoRequest, opts ...grpc.CallOption) (*FindTickerCryptoResponse, error)
+	FindTickersCrypto(ctx context.Context, in *FindTickersCryptoRequest, opts ...grpc.CallOption) (*FindTickersCryptoResponse, error)
 	// This API call returns an array of forex tickers available at Finazon Data API. This list is updated daily.
-	FindTickersForex(ctx context.Context, in *FindTickersForexRequest, opts ...grpc.CallOption) (*FindTickerForexResponse, error)
+	FindTickersForex(ctx context.Context, in *FindTickersForexRequest, opts ...grpc.CallOption) (*FindTickersForexResponse, error)
 	// This API call returns an array of US tickers available at Finazon Data API. This list is updated daily.
-	FindTickerUS(ctx context.Context, in *FindTickerUSRequest, opts ...grpc.CallOption) (*FindTickerUSResponse, error)
+	FindTickersUS(ctx context.Context, in *FindTickersUSRequest, opts ...grpc.CallOption) (*FindTickersUSResponse, error)
 }
 
 type tickersServiceClient struct {
@@ -47,8 +47,8 @@ func NewTickersServiceClient(cc grpc.ClientConnInterface) TickersServiceClient {
 	return &tickersServiceClient{cc}
 }
 
-func (c *tickersServiceClient) FindTickersStocks(ctx context.Context, in *FindTickersStocksRequest, opts ...grpc.CallOption) (*FindTickerStocksResponse, error) {
-	out := new(FindTickerStocksResponse)
+func (c *tickersServiceClient) FindTickersStocks(ctx context.Context, in *FindTickersStocksRequest, opts ...grpc.CallOption) (*FindTickersStocksResponse, error) {
+	out := new(FindTickersStocksResponse)
 	err := c.cc.Invoke(ctx, TickersService_FindTickersStocks_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -56,8 +56,8 @@ func (c *tickersServiceClient) FindTickersStocks(ctx context.Context, in *FindTi
 	return out, nil
 }
 
-func (c *tickersServiceClient) FindTickersCrypto(ctx context.Context, in *FindTickersCryptoRequest, opts ...grpc.CallOption) (*FindTickerCryptoResponse, error) {
-	out := new(FindTickerCryptoResponse)
+func (c *tickersServiceClient) FindTickersCrypto(ctx context.Context, in *FindTickersCryptoRequest, opts ...grpc.CallOption) (*FindTickersCryptoResponse, error) {
+	out := new(FindTickersCryptoResponse)
 	err := c.cc.Invoke(ctx, TickersService_FindTickersCrypto_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -65,8 +65,8 @@ func (c *tickersServiceClient) FindTickersCrypto(ctx context.Context, in *FindTi
 	return out, nil
 }
 
-func (c *tickersServiceClient) FindTickersForex(ctx context.Context, in *FindTickersForexRequest, opts ...grpc.CallOption) (*FindTickerForexResponse, error) {
-	out := new(FindTickerForexResponse)
+func (c *tickersServiceClient) FindTickersForex(ctx context.Context, in *FindTickersForexRequest, opts ...grpc.CallOption) (*FindTickersForexResponse, error) {
+	out := new(FindTickersForexResponse)
 	err := c.cc.Invoke(ctx, TickersService_FindTickersForex_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -74,9 +74,9 @@ func (c *tickersServiceClient) FindTickersForex(ctx context.Context, in *FindTic
 	return out, nil
 }
 
-func (c *tickersServiceClient) FindTickerUS(ctx context.Context, in *FindTickerUSRequest, opts ...grpc.CallOption) (*FindTickerUSResponse, error) {
-	out := new(FindTickerUSResponse)
-	err := c.cc.Invoke(ctx, TickersService_FindTickerUS_FullMethodName, in, out, opts...)
+func (c *tickersServiceClient) FindTickersUS(ctx context.Context, in *FindTickersUSRequest, opts ...grpc.CallOption) (*FindTickersUSResponse, error) {
+	out := new(FindTickersUSResponse)
+	err := c.cc.Invoke(ctx, TickersService_FindTickersUS_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -88,13 +88,13 @@ func (c *tickersServiceClient) FindTickerUS(ctx context.Context, in *FindTickerU
 // for forward compatibility
 type TickersServiceServer interface {
 	// This API call returns an array of stocks tickers available at Finazon Data API. This list is updated daily.
-	FindTickersStocks(context.Context, *FindTickersStocksRequest) (*FindTickerStocksResponse, error)
+	FindTickersStocks(context.Context, *FindTickersStocksRequest) (*FindTickersStocksResponse, error)
 	// This API call returns an array of crypto tickers available at Finazon Data API. This list is updated daily.
-	FindTickersCrypto(context.Context, *FindTickersCryptoRequest) (*FindTickerCryptoResponse, error)
+	FindTickersCrypto(context.Context, *FindTickersCryptoRequest) (*FindTickersCryptoResponse, error)
 	// This API call returns an array of forex tickers available at Finazon Data API. This list is updated daily.
-	FindTickersForex(context.Context, *FindTickersForexRequest) (*FindTickerForexResponse, error)
+	FindTickersForex(context.Context, *FindTickersForexRequest) (*FindTickersForexResponse, error)
 	// This API call returns an array of US tickers available at Finazon Data API. This list is updated daily.
-	FindTickerUS(context.Context, *FindTickerUSRequest) (*FindTickerUSResponse, error)
+	FindTickersUS(context.Context, *FindTickersUSRequest) (*FindTickersUSResponse, error)
 	mustEmbedUnimplementedTickersServiceServer()
 }
 
@@ -102,17 +102,17 @@ type TickersServiceServer interface {
 type UnimplementedTickersServiceServer struct {
 }
 
-func (UnimplementedTickersServiceServer) FindTickersStocks(context.Context, *FindTickersStocksRequest) (*FindTickerStocksResponse, error) {
+func (UnimplementedTickersServiceServer) FindTickersStocks(context.Context, *FindTickersStocksRequest) (*FindTickersStocksResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindTickersStocks not implemented")
 }
-func (UnimplementedTickersServiceServer) FindTickersCrypto(context.Context, *FindTickersCryptoRequest) (*FindTickerCryptoResponse, error) {
+func (UnimplementedTickersServiceServer) FindTickersCrypto(context.Context, *FindTickersCryptoRequest) (*FindTickersCryptoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindTickersCrypto not implemented")
 }
-func (UnimplementedTickersServiceServer) FindTickersForex(context.Context, *FindTickersForexRequest) (*FindTickerForexResponse, error) {
+func (UnimplementedTickersServiceServer) FindTickersForex(context.Context, *FindTickersForexRequest) (*FindTickersForexResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FindTickersForex not implemented")
 }
-func (UnimplementedTickersServiceServer) FindTickerUS(context.Context, *FindTickerUSRequest) (*FindTickerUSResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FindTickerUS not implemented")
+func (UnimplementedTickersServiceServer) FindTickersUS(context.Context, *FindTickersUSRequest) (*FindTickersUSResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FindTickersUS not implemented")
 }
 func (UnimplementedTickersServiceServer) mustEmbedUnimplementedTickersServiceServer() {}
 
@@ -181,20 +181,20 @@ func _TickersService_FindTickersForex_Handler(srv interface{}, ctx context.Conte
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TickersService_FindTickerUS_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FindTickerUSRequest)
+func _TickersService_FindTickersUS_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FindTickersUSRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TickersServiceServer).FindTickerUS(ctx, in)
+		return srv.(TickersServiceServer).FindTickersUS(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: TickersService_FindTickerUS_FullMethodName,
+		FullMethod: TickersService_FindTickersUS_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TickersServiceServer).FindTickerUS(ctx, req.(*FindTickerUSRequest))
+		return srv.(TickersServiceServer).FindTickersUS(ctx, req.(*FindTickersUSRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -219,8 +219,8 @@ var TickersService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _TickersService_FindTickersForex_Handler,
 		},
 		{
-			MethodName: "FindTickerUS",
-			Handler:    _TickersService_FindTickerUS_Handler,
+			MethodName: "FindTickersUS",
+			Handler:    _TickersService_FindTickersUS_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
